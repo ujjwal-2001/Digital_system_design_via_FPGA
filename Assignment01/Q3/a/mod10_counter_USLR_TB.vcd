@@ -1,0 +1,118 @@
+$date
+	Thu Jan 25 19:24:41 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module mod10_counter_USLR_tb $end
+$var wire 4 ! count [3:0] $end
+$var reg 1 " clk $end
+$var reg 1 # reset $end
+$scope module mod10_counter_USLR_inst $end
+$var wire 1 " clk $end
+$var wire 4 $ count [3:0] $end
+$var wire 1 # reset $end
+$var reg 4 % count_temp [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx %
+bx $
+1#
+0"
+bx !
+$end
+#50
+1"
+#100
+0"
+#150
+1"
+#200
+0"
+#250
+1"
+#300
+0"
+#350
+1"
+#400
+0"
+#450
+1"
+#500
+0"
+#550
+1"
+#600
+0"
+#650
+1"
+#700
+0"
+#750
+1"
+#800
+0"
+#850
+1"
+#900
+0"
+#950
+1"
+#1000
+0"
+#1010
+0#
+#1050
+b0 !
+b0 $
+b0 %
+1"
+#1100
+0"
+#1150
+1"
+#1200
+0"
+#1250
+1"
+#1300
+0"
+#1350
+1"
+#1400
+0"
+#1450
+1"
+#1500
+0"
+#1550
+1"
+#1600
+0"
+#1650
+1"
+#1700
+0"
+#1750
+1"
+#1800
+0"
+#1850
+1"
+#1900
+0"
+#1950
+1"
+#2000
+0"
+#2010
