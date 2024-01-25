@@ -2,7 +2,7 @@
 // Name: UJJWAL CHAUDAHRY, M. Tech., ESE [2023 - 2025], IISc Bengaluru
 // Q2 : 4-bit Carry Look Ahead Adder using assign statement
 
-module 4b_CLA(
+module CLA_4b(
     input wire [3:0] A,
     input wire [3:0] B,
     input wire Cin,
