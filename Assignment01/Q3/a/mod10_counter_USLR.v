@@ -1,4 +1,4 @@
-// Date: 18/09/2020
+// Date: 25/01/2023
 // Name: UJJWAL CHAUDAHRY, M. Tech., ESE [2023 - 2025], IISc Bengaluru
 // Q3 a: Verilog code for mod 10 up counter with active low synchronous reset
 

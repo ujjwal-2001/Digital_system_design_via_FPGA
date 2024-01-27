@@ -1,4 +1,4 @@
-// Date: 18/09/2020
+// Date: 25/01/2023
 // Name: UJJWAL CHAUDAHRY, M. Tech., ESE [2023 - 2025], IISc Bengaluru
 // Q2 : 4-bit Carry Look Ahead Adder using assign statement
 

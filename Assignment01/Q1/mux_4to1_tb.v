@@ -1,4 +1,4 @@
-// Date: 18/09/2020
+// Date: 25/01/2023
 // Name: UJJWAL CHAUDAHRY, M. Tech., ESE [2023 - 2025], IISc Bengaluru
 // Q1 : Verilog code for 4 to 1 mux testbench
 `timescale 1ns / 1ps
