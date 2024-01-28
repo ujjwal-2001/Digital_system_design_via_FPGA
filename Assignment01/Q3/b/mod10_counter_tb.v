@@ -13,6 +13,7 @@ module mod10_counter_tb();
     reg load;
     reg [1:0] mode;
     wire [3:0] count;
+    wire flag;
 
     mod10_counter inst(
         .clk(clk),
@@ -28,21 +29,23 @@ always #5 clk=~clk;
 initial begin
 
     // monitor all inputs and outputs
-    $monitor("time=%d clk=%b, reset=%b, in=%d, load=%b, mode=%b, count=%d", $time, clk, reset, in, load, mode, count);
+    $monitor("T=%d clk=%b, reset=%b, in=%d, load=%b, mode=%b, count=%d, f=%b", $time, clk, reset, in, load, mode, count,flag);
 
     clk=0;
     reset=1;
     mode=2'b00;
-    load=0;
+    load=1;
     in=4'd12;
 
     #10 reset=0;
     #20 reset=1;
-    #150 mode=2'b01;
     #150 mode=2'b10;
-    #250 mode=2'b11;
-    #50 load=1;
-    #20 $finish;
+    load=0;
+    #180 mode=2'b11;
+    #10 load=1;
+    #10 load=0;
+    #5 mode=2'b10;
+    #100 $finish;
 end
 
 endmodule  

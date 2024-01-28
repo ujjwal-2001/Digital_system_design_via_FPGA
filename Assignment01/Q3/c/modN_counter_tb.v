@@ -36,7 +36,7 @@ initial begin
     mode=2'b00;
     load=0;
     in=4'd12;
-    n=4'd15;
+    n=4'd10;
 
     #10 reset=0;
     #20 reset=1;
