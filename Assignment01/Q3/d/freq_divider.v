@@ -1,4 +1,4 @@
-module Freq_divider (
+module freq_divider (
   input wire clk,      // Input clock at 100MHz
   output wire clk_out   // Output divided clock at ~1Hz
 );
