@@ -2,7 +2,6 @@
 // Name: UJJWAL CHAUDAHRY, M. Tech., ESE [2023 - 2025], IISc Bengaluru
 // Q2 : 4-bit Carry Look Ahead Adder testbench
 
-`include "CLA_4b.v"
 `timescale 1ns / 1ps
 
 

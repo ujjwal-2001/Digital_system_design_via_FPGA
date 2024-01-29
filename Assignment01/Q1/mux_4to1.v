@@ -3,11 +3,26 @@
 // Q1 : Verilog code for 4 to 1 mux
 
 module mux_4to1(
-    input wire [3:0] in,
+    input wire [3:0] in0,
+    input wire [3:0] in1,
+    input wire [3:0] in2,
+    input wire [3:0] in3,
     input wire [1:0] sel,
-    output wire out
+    output wire [3:0]out
     );
 
-    assign out = in[sel];
+    reg [3:0] out_temp;
+
+    assign out = out_temp;
+
+    always @(*) begin
+        case(sel)
+            2'b00: out_temp = in0;
+            2'b01: out_temp = in1;
+            2'b10: out_temp = in2;
+            2'b11: out_temp = in3;
+            default: out_temp = 4'bxxxx;
+        endcase
+    end
     
 endmodule
