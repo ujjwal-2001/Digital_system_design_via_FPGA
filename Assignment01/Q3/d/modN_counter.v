@@ -1,14 +1,13 @@
-// Date: 26/01/2023
 // Name: UJJWAL CHAUDAHRY, M. Tech., ESE [2023 - 2025], IISc Bengaluru
+// SR No.: 22577
+// Q3
 
-
-module modN_counter(
+module modN_counter #(parameter n=10) (
     input wire clk,
     input wire reset,
     input wire [3:0] in,
     input wire load,
     input wire [1:0] mode,
-    input wire [3:0] n,
     output wire [3:0] count
     );
 
@@ -25,12 +24,18 @@ module modN_counter(
         end
         else begin
             case(mode)
-                2'b00: count_temp <= (count_temp >= n-1)? 4'd0 : count_temp + 1; // up-counter
-                2'b01: count_temp <= (count_temp == 4'b0 || count_temp > n-1)? n - 1 :count_temp - 1; // down-counter
+                2'b00: begin
+                    count_temp <= (count_temp >= n-1)? 4'd0 : count_temp + 1; // up-counter
+                    flag <= 1'b0;
+                end
+                2'b01: begin
+                    count_temp <= (count_temp == 4'b0 || count_temp > n-1)? n - 1 :count_temp - 1; // down-counter
+                    flag <= 1'b0;
+                end
                 2'b10: begin // up-down counter
                     if(!flag)begin
                         count_temp <= ((count_temp == n-1)? n-2 : (count_temp > n)? 4'd0 : count_temp + 1);
-                        if(count_temp == 4'd9)begin
+                        if(count_temp == n-1)begin
                             flag <= 1'b1;
                         end else begin
                             flag <= flag;
@@ -45,14 +50,13 @@ module modN_counter(
                         end
                     end
                 end
-                2'b11: count_temp <= count_temp; // hold previous value
+                2'b11: begin
+                    count_temp <= count_temp; // hold previous value
+                    flag <= 1'b0;
+                end
                 default: count_temp <= 4'd0;
             endcase
         end
-    end
-
-    always @ (mode) begin
-        flag <= 1'b0;
     end
 
     assign count = count_temp;
