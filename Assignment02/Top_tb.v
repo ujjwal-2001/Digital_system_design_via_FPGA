@@ -7,18 +7,28 @@ module top_tb();
     reg [7:0] x;
     reg [7:0] y;
     wire [15:0] p;
+    reg clock;
+    reg rst;
 
     Top inst(
         .x(x),
         .y(y),
-        .p(p)
+        .p(p),
+        .clock(clock),
+        .rst(rst)
     );
+
+    always begin
+        #5 clock = ~clock;
+    end
 
     initial begin
 
         x=8'b00000000;
         y=8'b00000001;
-
+        rst=0;
+        clock=0;
+        #10 rst=1;
         #10 x=8'b00000001;
         #10 y=8'b00000010;
         #10 x=8'b00000011;
