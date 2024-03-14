@@ -19,6 +19,7 @@ module top_level_tb();
         .in(in),
         .load(load),
         .mode(mode),
+        .enable_ext(enable_ext),
         .thermo_count(thermo_count)
     );
 
@@ -32,16 +33,12 @@ module top_level_tb();
         clk=1'b0;
         in=4'd11;
         load=0;
-        mode=2'b00;
-        enable_ext=1;
+        mode=2'b01;
+        enable_ext=0;
 
         #30 reset=1'b1;
-        #500 mode=2'b01;
-        #500 mode=2'b10;
-        #500 mode=2'b11;
-        #500 mode=2'b00;
-        #500 load=2'b01;
-        #500 load=2'b00;
+        #20 enable_ext = 1;
+
     end
 
 endmodule  

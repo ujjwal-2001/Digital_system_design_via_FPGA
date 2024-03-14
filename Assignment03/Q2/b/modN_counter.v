@@ -12,7 +12,7 @@ module modN_counter #(parameter n=10) (
     output wire [3:0] count
     );
 
-    reg [3:0] count_temp;
+    reg [3:0] count_temp=0;
     reg flag;
 
     always @ (posedge clk) begin
