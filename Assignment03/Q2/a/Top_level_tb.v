@@ -27,6 +27,10 @@ module top_level_tb();
         #5 clk=~clk;
     end
 
+    always begin
+        #100 enable_ext = ~enable_ext;
+    end
+
     initial begin
 
         reset=1'b0;
@@ -37,7 +41,6 @@ module top_level_tb();
         enable_ext=0;
 
         #30 reset=1'b1;
-        #20 enable_ext = 1;
 
     end
 

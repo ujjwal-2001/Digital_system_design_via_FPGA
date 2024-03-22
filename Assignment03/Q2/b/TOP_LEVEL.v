@@ -30,20 +30,13 @@ module top(
         .out(enable_ext_stable)
     );
 
-    freq_divider f_divide(
-        .clk(clk),
-        .reset(reset),
-        .en_clk(en_clk)
-    );
-
     modN_counter counter( 
         .clk(clk),
-        .en_clk(en_clk),
+        .en_clk(enable_ext_stable),
         .reset(reset),
         .in(in),
         .load(load),
         .mode(mode),
-        .enable_ext(enable_ext_stable),
         .count(count)
     );
 

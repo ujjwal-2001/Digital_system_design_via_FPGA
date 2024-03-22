@@ -7,21 +7,19 @@ module modN_counter #(parameter n=10) (
     input wire reset,
     input wire [3:0] in,
     input wire load,
-    input wire enable_ext,
     input wire [1:0] mode,
     output wire [3:0] count
     );
 
-    reg [3:0] count_temp=0;
+    reg [3:0] count_temp;
     reg flag;
 
     always @ (posedge clk) begin
-        if(en_clk || enable_ext)begin
-            if (reset == 0) begin
+        if (reset == 0) begin
                 count_temp <= 4'd0;
                 flag <= 1'b0;
-            end
-            else if(load) begin
+        end else if(en_clk) begin
+            if(load) begin
                 count_temp <= in;
             end
             else begin

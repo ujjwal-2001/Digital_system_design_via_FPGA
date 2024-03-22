@@ -14,19 +14,13 @@ module top(
     wire en_clk;
     wire[3:0] count;
 
-    freq_divider inst1(
-        .clk(clk),
-        .en_clk(en_clk)
-    );
-
     modN_counter inst( 
         .clk(clk),
-        .en_clk(en_clk),
+        .en_clk(enable_ext),
         .reset(reset),
         .in(in),
         .load(load),
         .mode(mode),
-        .enable_ext(enable_ext),
         .count(count)
     );
 
